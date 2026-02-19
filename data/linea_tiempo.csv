@@ -1,0 +1,40 @@
+﻿id,anio,fecha,titulo,descripcion,categoria
+1,1992,Junio,Llegada de Internet (Ecuanet),"La conexión de los nodos de Ecuanet marcó el ingreso formal del Ecuador a Internet, interconectando universidades y entidades financieras con redes globales.",tecnología
+2,1992,10 de agosto,Ley Especial de Telecomunicaciones,Regulación del sector y creación de CONATEL y SUPERTEL. Permitió la entrada de operadoras móviles privadas al país.,legal
+3,2000,5 de septiembre,Acceso Universal,Declaración del Acceso Universal como Política de Estado para impulsar la difusión del internet a nivel nacional.,legal
+4,2002,18 de junio,La Primera Transacción Digital,Se registra la primera transacción electrónica oficial en la historia del Ecuador por un monto de USD 50. Este evento marcó el inicio técnico de la era digital bancaria.,tecnología
+5,2002,Abril,Ley de Comercio Electrónico,"Se aprueba la Ley de Comercio Electrónico, estableciendo el marco jurídico con el principio de 'equivalencia funcional', otorgando a la firma electrónica el mismo valor legal que la firma manuscrita.",legal
+6,2008,Octubre,Operatividad de la Firma Electrónica,"El Banco Central del Ecuador se acredita como la primera entidad de certificación oficial, permitiendo que la Ley de 2002 cobrara vida real.",legal
+7,2009,11 de mayo,Sistema de Gestión Documental QUIPUX,Uso obligatorio de gestión documental electrónica en la Administración Pública para reducir el uso de papel y mejorar la trazabilidad.,
+8,2009,Agosto,Creación del MINTEL,El Estado adquiere una cabeza estratégica para proyectos tecnológicos.,tecnología
+9,2009,Mayo,El SRI inicia la emisión de comprobantes electrónicos,,tecnología
+10,2013,17 de mayo,Inicio Facturación Electrónica SRI,"Inicia la obligatoriedad por grupos para el uso de comprobantes digitales, marcando la transición definitiva hacia la contabilidad digital.",legal
+11,2014,,Nace Payphone,"Una de las primeras fintechs ecuatorianas en operar, pionera en pagos digitales antes del boom de las apps bancarias.",tecnología financiera
+12,2016,,Código Ingenios,Se expide el Código Orgánico de la Economía Social de los Conocimientos. Priorizó el uso de tecnologías libres (Open Source) en el Estado y declaró el acceso a internet como un servicio básico.,legal
+13,2017,,Fundación de Kushki,Nace la empresa que se convertiría en la infraestructura de pagos más importante de la región.,tecnología financiera
+14,2018,23 de octubre,Ley de Optimización de Trámites,"Prohibición de exigir documentos físicos que el Estado ya posee, estableciendo el principio de eficiencia administrativa digital.",legal
+15,2019,,Desarrollo de App Nativa - Banco Pichincha,"El banco inicia el desarrollo de su aplicativo móvil propio. En ese momento, contaban con aproximadamente 700,000 clientes digitales.",tecnología
+16,2019,6 de noviembre,Portal GOB.EC,Lanzamiento de la plataforma centralizada de servicios ciudadanos y catastro nacional de trámites en un solo sitio.,tecnología
+17,2020,2 de marzo,Lanzamiento Banca Móvil Pichincha,"Apenas dos semanas antes del confinamiento, Banco Pichincha lanza su nueva aplicación móvil. El lanzamiento fue estratégico y oportuno.",tecnología
+18,2020,16 de marzo,El 'Big Bang' Digital - Pandemia,"Con el cierre de agencias y corresponsales, la pandemia actuó como un acelerador forzoso. Entre mayo y septiembre, las transferencias electrónicas crecieron un 35%.",tecnología
+19,2020,22 de junio,Sistema Judicial (SATJE),"Implementación de la plataforma informática para la gestión, registro y seguimiento de causas judiciales en línea.",tecnología
+20,2020,,Lanzamiento de 'DeUna',"Banco Pichincha lanza la billetera digital 'DeUna' para facilitar pagos sin contacto y sin comisiones. En su primer año, alcanzó 100,000 descargas.",tecnología financiera
+21,2020,,Expansión Banco del Pacífico,"El banco potenció 'Onboard BdP', permitiendo la apertura de cuentas 100% en línea. Se abrieron 181,000 cuentas de ahorro, logrando un crecimiento del 103% en transacciones.",tecnología
+22,2021,Mayo,Ley de Protección de Datos Personales,"Tras filtraciones masivas de datos (caso Novaestrat), se aprueba esta ley que introduce derechos como el 'derecho al olvido' y la 'portabilidad de datos'.",legal
+23,2021,Julio,Hito Histórico: Digital supera a Físico,"Por primera vez, las transferencias digitales (285 millones) superaron a las transacciones físicas en ventanilla (258 millones). El monto transaccionado alcanzó USD 135,849 millones, superando en 1.2 veces el PIB del Ecuador.",tecnología
+24,2021,,Consolidación de 'DeUna',"La aplicación creció exponencialmente, alcanzando 680,000 descargas y afiliando a 56,000 negocios a nivel nacional. Se transaccionaron USD 35 millones.",tecnología financiera
+25,2021,Microcrédito Digital,"Banco Pichincha implementó el primer microcrédito 100% digital del Ecuador, colocando USD 2.1 millones en su primer año.",,tecnología financiera
+26,2022,Febrero,Ley de Defensa al Cliente Financiero,Se aprueba la ley que obliga a las entidades financieras a disponer de canales electrónicos y físicos eficientes para reclamos.,legal
+27,2022,Junio,Primer Unicornio Ecuatoriano,"Kushki alcanza una valoración de USD 1,500 millones, marcando un hito en la historia financiera del país.",tecnología financiera
+28,2022,Junio,Relaunch 'be Produbanco',Produbanco relanza su app enfocada en experiencias digitales.,tecnología financiera
+29,2022,Noviembre,Facturación Electrónica Obligatoria,"La obligatoriedad impuesta por el SRI impulsó la emisión masiva de firmas electrónicas, que pasaron de 1.4 millones a más de 2 millones al cierre de 2024.",legal
+30,2022,Diciembre,Ley Fintech,"Se publica la Ley para el Desarrollo y Control de los Servicios Financieros Tecnológicos, regulando por primera vez a las empresas tecnológicas financieras.",legal
+31,2022,,DeUna supera el millón de descargas,"La aplicación supera el 1 millón de descargas y logra incluir en el sistema financiero digital a 180,000 microempresarios.",tecnología financiera
+32,2022,,Integración en Banco del Pacífico,"El banco migra las funcionalidades de 'Onboard BdP' hacia su Banca Móvil principal para unificar la experiencia del usuario, cerrando el año con 172 millones de transacciones móviles.",tecnología
+33,2023,Febrero,Ley de Transformación Digital y Audiovisual,Normativa que ofrece incentivos tributarios (exoneración de Impuesto a la Renta) para inversiones en el sector audiovisual y tecnológico. Facilita la constitución de empresas 100% digitales.,legal
+34,2023,,PeiGo - Tarjeta Visa Virtual,"Banco Guayaquil lanza su tarjeta Visa Virtual, atacando el mercado de no bancarizados.",tecnología financiera
+35,2023,,DeUna: Líder en Micro-pagos,DeUna supera el millón de usuarios activos y se consolida como líder en micro-pagos.,tecnología financiera
+36,2024,Septiembre,Norma de Medios y Sistemas de Pago,"Se emite la Norma que Regula los Medios y Sistemas de Pago (Junta Política y Regulación Monetaria), aterrizando la Ley Fintech.",legal
+37,2025,Enero,Alianza CNT y Google Cloud,CNT y Google Cloud establecieron una alianza para impulsar la transformación digital en el Ecuador.,tecnología
+38,2025,8 de abril,Agenda de Transformación Digital 2025-2030,"El MINTEL publica la Agenda orientada a reducir la brecha digital, fortalecer el sector público y promover una cultura digital.",legal
+39,2026,,Integración de IA y Ciberseguridad,Se proyecta la integración total de ecosistemas de Inteligencia Artificial en la banca y ciberseguridad nacional. El 100% de los contribuyentes activos poseen firma electrónica.,tecnología
