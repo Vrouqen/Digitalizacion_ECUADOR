@@ -90,48 +90,61 @@ export async function initTutiDashboard() {
     }
 
     // --- GRÁFICO 3: VELOCIDAD DE INVENTARIO VS AHORRO (EL NUEVO GRÁFICO) ---
-    const ctxInv = document.getElementById('chartInventorySavings');
-    if (ctxInv) {
-        // Calcular rotación por año (Ventas / Inventario)
-        const rotacionHistorica = dataTuti.map(d => d.inventario > 0 ? (d.ventas / d.inventario) : 0);
-        
-        // Calcular ahorro acumulado año a año
-        let acumulado = 0;
-        const ahorroHistorico = dataTuti.map(d => {
-            acumulado += (d.ventas * 0.02);
-            return acumulado;
-        });
+    const ctxMargin = document.getElementById('chartMarginTrends');
+    if (ctxMargin) {
+        // Replicamos tu función original para calcular el margen en porcentaje
+        const calculateMargin = (companyData) => companyData.map(d => ((d.perdida / d.ventas) * 100));
 
-        new Chart(ctxInv, {
-            type: 'bar',
+        new Chart(ctxMargin, {
+            type: 'line',
             data: {
                 labels: years,
                 datasets: [
-                    {
-                        type: 'bar',
-                        label: 'Rotación Inventario (Veces)',
-                        data: rotacionHistorica,
-                        backgroundColor: 'rgba(139, 92, 246, 0.8)',
-                        yAxisID: 'y'
+                    { 
+                        label: 'Margen Tía', 
+                        data: calculateMargin(dataTia), 
+                        borderColor: '#f59e0b', 
+                        backgroundColor: '#f59e0b', 
+                        tension: 0.4 
                     },
-                    {
-                        type: 'line',
-                        label: 'Ahorro Acumulado ($M)',
-                        data: ahorroHistorico,
-                        borderColor: '#10b981', // Emerald green para el ahorro
-                        backgroundColor: '#10b981',
-                        borderWidth: 3,
-                        tension: 0.3,
-                        yAxisID: 'y1'
+                    { 
+                        label: 'Margen Favorita', 
+                        data: calculateMargin(dataFavorita), 
+                        borderColor: '#ef4444', 
+                        backgroundColor: '#ef4444', 
+                        tension: 0.4 
+                    },
+                    { 
+                        label: 'Margen Tuti', 
+                        data: calculateMargin(dataTuti), 
+                        borderColor: '#8b5cf6', 
+                        backgroundColor: '#8b5cf6', 
+                        borderWidth: 3, 
+                        borderDash: [2, 2], // Línea punteada como en tu original
+                        tension: 0.4 
                     }
                 ]
             },
-            options: {
-                responsive: true, maintainAspectRatio: false,
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: false, 
                 interaction: { mode: 'index', intersect: false },
-                scales: {
-                    y: { type: 'linear', position: 'left', title: { display: true, text: 'Veces al año' } },
-                    y1: { type: 'linear', position: 'right', title: { display: true, text: 'Ahorro ($M)' }, grid: { drawOnChartArea: false } }
+                plugins: { 
+                    tooltip: { 
+                        callbacks: { 
+                            label: (ctx) => `${ctx.dataset.label}: ${ctx.raw.toFixed(2)}%` 
+                        } 
+                    } 
+                },
+                scales: { 
+                    y: { 
+                        title: { display: true, text: 'Margen Neto (%)' },
+                        grid: {
+                            // Mantenemos este pequeño toque: la línea del cero más oscura para ver cuándo Tuti es rentable
+                            color: (context) => context.tick.value === 0 ? '#94a3b8' : '#e2e8f0', 
+                            lineWidth: (context) => context.tick.value === 0 ? 2 : 1
+                        }
+                    } 
                 }
             }
         });
