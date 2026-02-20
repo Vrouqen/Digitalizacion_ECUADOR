@@ -448,26 +448,29 @@
                     </div>
                 </div>
 
-                <div
-                    class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm p-6 flex flex-col flex-1">
-                    <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2">Comms Investment</h3>
-                    <div class="relative flex flex-col items-center justify-center flex-1 py-4">
-                        <svg class="w-48 h-24 overflow-visible" viewBox="0 0 200 100">
-                            <path class="dark:stroke-slate-700" d="M 20 100 A 80 80 0 0 1 180 100" fill="none"
-                                stroke="#e2e8f0" stroke-linecap="round" stroke-width="20"></path>
-                            <path d="M 20 100 A 80 80 0 0 1 150 45" fill="none" stroke="#0d9488" stroke-linecap="round"
-                                stroke-width="20"></path>
-                        </svg>
-                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-2 text-center">
-                            <p class="text-2xl font-black text-slate-900 dark:text-white">$103.7M</p>
-                            <p class="text-[10px] text-slate-500 uppercase tracking-wide">Transporte &amp; Comms</p>
-                        </div>
-                    </div>
-                    <div class="mt-2 text-center">
-                        <span
-                            class="inline-block px-3 py-1 bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 text-xs font-semibold rounded-full">
-                            Sector Growth: +8.5%
+                <div class="rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm p-6 flex flex-col h-auto">
+                    <div class="flex justify-between items-start mb-1">
+                        <h3 class="text-lg font-bold text-slate-900 dark:text-white">Inversión vs Aporte al PIB</h3>
+                        <span id="iedGrowthBadge" class="inline-block px-3 py-1 bg-teal-50 dark:bg-teal-900/20 text-teal-700 dark:text-teal-300 text-xs font-semibold rounded-full">
+                            Cargando...
                         </span>
+                    </div>
+                    <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Inversión Extranjera vs Valor Agregado Bruto (Comunicaciones)</p>
+                    
+                    <div class="h-[250px] w-full mt-auto relative">
+                        <canvas id="commsInvestmentChart"></canvas>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-slate-50 dark:bg-slate-900/50 rounded-lg border border-slate-100 dark:border-slate-800">
+                        <div class="flex items-start gap-3">
+                            <span class="material-symbols-outlined text-teal-500 mt-0.5">account_balance</span>
+                            <div>
+                                <h4 class="text-sm font-semibold text-slate-800 dark:text-white mb-1">Resiliencia ante la Volatilidad</h4>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+                                    Aunque la entrada de Inversión Extranjera Directa (barras) sufre fuertes picos y caídas cada año, el Valor Agregado Bruto del sector tecnológico (línea) se mantiene estable y resiliente por encima de los <strong>$2,400 Millones</strong>, demostrando un mercado de consumo interno sumamente maduro y resistente a shocks externos.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -497,14 +500,16 @@
             import { initTimeline } from './static/timeline.js';
             import { initEgdiCharts } from './static/graficos_egdi.js';
             import { initTutiDashboard } from './static/tuti_dashboard.js'; 
-            import { initExportServicesChart } from './static/graficos_exportaciones.js'; // <-- Importa esto
+            import { initExportServicesChart } from './static/graficos_exportaciones.js';
+            import { initInvestmentChart } from './static/graficos_inversion.js'; // <-- Importa esto
 
             document.addEventListener('DOMContentLoaded', () => {
                 initTimeline('timeline-canvas', './data/linea_tiempo.csv');
                 initEgdiCharts('egdiChart', 'epiChart'); 
                 initTutiDashboard(); 
+                initExportServicesChart(); 
                 
-                initExportServicesChart(); // <-- Ejecuta esto
+                initInvestmentChart(); // <-- Ejecuta esto
             });
         </script>
     </main>
