@@ -37,7 +37,7 @@ export async function initInvestmentChart() {
         });
 
         // 4. Vamos a graficar desde el año 2000 hasta el 2024
-        const years = Array.from({length: 26}, (_, i) => 2000 + i);
+        const years = Array.from({length: 25}, (_, i) => 2000 + i);
 
         // Mapear los datos al rango de años
         const datasetVAB = years.map(y => vabData[y] !== undefined ? vabData[y] : null);
@@ -45,13 +45,13 @@ export async function initInvestmentChart() {
 
         // 5. Calcular crecimiento del último año de inversión (2023 vs 2024)
         const ied2023 = invData[2023];
-        const ied2025 = invData[2025];
-        if (ied2023 && ied2025) {
-            const growth = ((ied2025 - ied2023) / Math.abs(ied2023)) * 100;
+        const ied2024 = invData[2024];
+        if (ied2023 && ied2024) {
+            const growth = ((ied2024 - ied2023) / Math.abs(ied2023)) * 100;
             const badge = document.getElementById('iedGrowthBadge');
             if (badge) {
                 const sign = growth >= 0 ? '+' : '';
-                badge.innerText = `IED 2025: ${sign}${growth.toFixed(1)}%`;
+                badge.innerText = `IED 2024: ${sign}${growth.toFixed(1)}%`;
                 
                 // Cambiar colores si es negativo o positivo
                 if (growth < 0) {

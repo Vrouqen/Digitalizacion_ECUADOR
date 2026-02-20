@@ -11,17 +11,25 @@ export async function initExportServicesChart() {
         
         // Parsear CSV
         const rows = csvText.split('\n').filter(row => row.trim() !== '');
+        
         // Omitir header, mapear datos
         const data = rows.slice(1).map(row => {
-            const cols = row.split(',').map(val => parseFloat(val.trim()));
+            const cols = row.split(',');
+            
+            // Función de seguridad: Si la celda está vacía o es inválida, devuelve 0 en lugar de NaN
+            const safeFloat = (val) => {
+                const parsed = parseFloat(val?.trim());
+                return isNaN(parsed) ? 0 : parsed;
+            };
+
             return {
-                anio: cols[1],
-                teleco_credito: cols[3],
-                teleco_debito: cols[4],
-                info_credito: cols[6],
-                info_debito: cols[7],
-                informacion_credito: cols[9],
-                informacion_debito: cols[10]
+                anio: parseInt(cols[1]),
+                teleco_credito: safeFloat(cols[3]),
+                teleco_debito: safeFloat(cols[4]),
+                info_credito: safeFloat(cols[6]),
+                info_debito: safeFloat(cols[7]),
+                informacion_credito: safeFloat(cols[9]),
+                informacion_debito: safeFloat(cols[10])
             };
         });
 
@@ -35,8 +43,13 @@ export async function initExportServicesChart() {
         function renderChart(sector) {
             let creditoData, debitoData, titulo;
 
-            // Extraer datos según el sector seleccionado
-            if (sector === 'informatica') {
+            // Extraer o calcular datos según el sector seleccionado
+            if (sector === 'total') {
+                // Sumar los 3 sectores para cada año
+                creditoData = filteredData.map(d => d.teleco_credito + d.info_credito + d.informacion_credito);
+                debitoData = filteredData.map(d => d.teleco_debito + d.info_debito + d.informacion_debito);
+                titulo = 'Total Servicios (Consolidado)';
+            } else if (sector === 'informatica') {
                 creditoData = filteredData.map(d => d.info_credito);
                 debitoData = filteredData.map(d => d.info_debito);
                 titulo = 'Servicios Informáticos';
@@ -50,7 +63,7 @@ export async function initExportServicesChart() {
                 titulo = 'Servicios de Información';
             }
 
-            // Destruir gráfico previo si existe
+            // Destruir gráfico previo si existe para que no se superpongan
             if (currentChart) {
                 currentChart.destroy();
             }
@@ -126,7 +139,9 @@ export async function initExportServicesChart() {
             // Actualizar el texto de la conclusión según el sector
             const conclusionText = document.getElementById('exportConclusionText');
             if (conclusionText) {
-                if (sector === 'informatica') {
+                if (sector === 'total') {
+                    conclusionText.innerHTML = `El <strong>consolidado de servicios digitales</strong> muestra un déficit general, donde el fuerte peso de las importaciones informáticas arrastra hacia abajo los ingresos positivos generados por el sector de telecomunicaciones.`;
+                } else if (sector === 'informatica') {
                     conclusionText.innerHTML = `Ecuador mantiene una <strong>fuerte dependencia externa</strong> en software. Aunque las exportaciones tecnológicas (crédito) intentan despegar, las importaciones (débito) de servicios y licencias informáticas son inmensamente superiores año tras año.`;
                 } else if (sector === 'telecomunicaciones') {
                     conclusionText.innerHTML = `En telecomunicaciones, la balanza muestra una estructura diferente. El país genera <strong>más ingresos (crédito) de los que gasta (débito)</strong> en pagos hacia el exterior por servicios de red, demostrando una infraestructura local más consolidada.`;
@@ -136,8 +151,8 @@ export async function initExportServicesChart() {
             }
         }
 
-        // Render inicial (Informática por defecto)
-        renderChart('informatica');
+        // Render inicial ('total' por defecto, ya que es tu primera opción ahora)
+        renderChart('total');
 
         // Escuchar cambios en el selector
         const filterSelect = document.getElementById('serviceSectorFilter');
