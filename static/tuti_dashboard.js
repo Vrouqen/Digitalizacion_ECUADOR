@@ -54,8 +54,8 @@ export async function initTutiDashboard() {
                 labels: years,
                 datasets: [
                     { label: 'Tuti (Efectivo)', data: dataTuti.map(d => d.ventas), borderColor: '#8b5cf6', backgroundColor: 'rgba(139, 92, 246, 0.1)', fill: true, tension: 0.4, borderWidth: 3 },
-                    { label: 'Tía', data: dataTia.map(d => d.ventas), borderColor: '#f59e0b', borderDash: [5, 5], tension: 0.4 },
-                    { label: 'Favorita', data: dataFavorita.map(d => d.ventas), borderColor: '#ef4444', tension: 0.4 }
+                    { label: 'Tía (DeUna/Tarjeta)', data: dataTia.map(d => d.ventas), borderColor: '#f59e0b', borderDash: [5, 5], tension: 0.4 },
+                    { label: 'Favorita (Tarjeta)', data: dataFavorita.map(d => d.ventas), borderColor: '#ef4444', tension: 0.4 }
                 ]
             },
             options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false } }
